@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppTeste"
+             x:Class="AppTeste.MainPage"
+             BackgroundColor="White">
+
+
+  <!--Adicionando Padding para IOS-->
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="0, 20, 0, 0" />
+  </ContentPage.Padding>
+
+  <Grid VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand"
+        RowSpacing="0"
+        ColumnSpacing="0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="10*" />
+      <RowDefinition Height="90*" />
+    </Grid.RowDefinitions>
+
+    <!--<ctl:Header Grid.Row="0" Title="Empresa"/>-->
+
+    <Grid Grid.Row="1" BackgroundColor="White">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="10*" />
+        <RowDefinition Height="75*" />
+        <RowDefinition Height="5*" />
+      </Grid.RowDefinitions>
+
+      <Grid Grid.Row="0" Padding="10,0">
+        <Label Text="Dados da Empresa"
+               Style="{StaticResource SubTitleStyle}"
+               HorizontalTextAlignment="Start"/>
+      </Grid>
+
+      <ScrollView  Grid.Row="1" VerticalOptions="Fill" HorizontalOptions="Fill">
+        <Grid Grid.Row="1" VerticalOptions="Fill" HorizontalOptions="Fill" Padding="10,0">
+
+          <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+          </Grid.RowDefinitions>
+
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60*" />
+            <ColumnDefinition Width="40*" />
+          </Grid.ColumnDefinitions>
+
+          <!--Nome Fantasia-->
+          <Entry Grid.Row="0" Grid.ColumnSpan="2"
+                 Placeholder="Nome fantasia"
+                 VerticalOptions="End"
+                 Style="{StaticResource EntryStyle}" />
+
+          <!--Razão Social-->
+          <Entry Grid.Row="1" Grid.ColumnSpan="2"
+                 Placeholder="Razão social"
+                 VerticalOptions="End"
+                 Style="{StaticResource EntryStyle}" />
+
+          <!--Tipo de Empresa-->
+          <StackLayout Grid.Row="2" Grid.ColumnSpan="2" Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="0">
+            <Label Text="Tipo de empresa" Style="{StaticResource LabelStyle}" />
+            <Picker x:Name="CompanyTypePicker" VerticalOptions="End" BackgroundColor="{StaticResource FieldsBackgroundColor}" />
+          </StackLayout>
+
+          <!--CNPJ-->
+          <Entry Grid.Row="3" Grid.Column="0"
+                 Placeholder="CNPJ"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="End"
+                 Keyboard="Numeric"
+                 Style="{StaticResource EntryStyle}" />
+
+          <!--Inscição Estadual-->
+          <Entry Grid.Row="3" Grid.Column="1"
+                 Placeholder="Insc. Estadual"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="End"
+                 Keyboard="Numeric"
+                 Style="{StaticResource EntryStyle}" />
+
+          <!--Atividade Primária-->
+          <StackLayout Grid.Row="4" Grid.ColumnSpan="2" Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="0">
+            <Label Text="Atividade primária" Style="{StaticResource LabelStyle}" />
+            <Picker x:Name="FirstActivityTypePicker" VerticalOptions="End" BackgroundColor="{StaticResource FieldsBackgroundColor}" />
+          </StackLayout>
+
+          <!--Atividade Secundária-->
+          <StackLayout Grid.Row="5" Grid.ColumnSpan="2" Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="0">
+            <Label Text="Atividade secundária" Style="{StaticResource LabelStyle}" />
+            <Picker x:Name="SecondActivityTypePicker" VerticalOptions="End" BackgroundColor="{StaticResource FieldsBackgroundColor}" />
+          </StackLayout>
+
+          <!--Navegação-->
+          <Grid Grid.Row="6" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition />
+              <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <!--Próximo-->
+            <Button Grid.Column="1"
+                    Text="Próximo"
+                    Style="{StaticResource NavigationButtonStyle}"/>
+          </Grid>
+
+        </Grid>
+      </ScrollView>
+
+      <BoxView Grid.Row="2" BackgroundColor="{StaticResource ThemeBackgroundColor}" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+    </Grid>
+  </Grid>
+
+
+</ContentPage>
