@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTeste.Views.CityPage">
+  <StackLayout>
+    <Entry Placeholder="Nome da cidade" Text="{Binding Name}" />
+    
+    <Button Text="Adicionar" Command="{Binding SaveCommand}" />
+    
+    <Button Text="Excluir" Command="{Binding DeleteCommand}"
+            IsEnabled="{Binding Cities, Converter={StaticResource CollectionToBooleanConverter}"/>
+    
+    <Label Text="Não há itens a exibir!!!" TextColor="Red" 
+           IsVisible="{Binding Cities, Converter={StaticResource CollectionToBooleanConverter}, ConverterParameter=true}" />
+    
+    <ListView Grid.Row="6" ItemsSource="{Binding Cities}"
+              IsVisible="{Binding Cities, Converter={StaticResource CollectionToBooleanConverter}}">
+      <ListView.HeaderTemplate >
+        <DataTemplate>
+          <StackLayout Orientation="Horizontal">
+            <Label Text="CIDADE" TextColor="Blue" />
+          </StackLayout>
+        </DataTemplate>
+      </ListView.HeaderTemplate>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell Text="{Binding Name}" />
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>
