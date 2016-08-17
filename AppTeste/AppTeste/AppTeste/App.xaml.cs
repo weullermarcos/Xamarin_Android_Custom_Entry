@@ -13,7 +13,7 @@ namespace AppTeste
         {
             InitializeComponent();
 
-            MainPage = new AppTeste.Views.CityPage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

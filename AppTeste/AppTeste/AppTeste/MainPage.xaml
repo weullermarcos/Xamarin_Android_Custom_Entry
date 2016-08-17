@@ -16,12 +16,21 @@
         HorizontalOptions="FillAndExpand"
         RowSpacing="0"
         ColumnSpacing="0">
+    
     <Grid.RowDefinitions>
       <RowDefinition Height="10*" />
       <RowDefinition Height="90*" />
     </Grid.RowDefinitions>
 
-    <!--<ctl:Header Grid.Row="0" Title="Empresa"/>-->
+    <Grid BackgroundColor="{StaticResource ThemeBackgroundColor}">
+
+      <Label Text="Sem Placeholder"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             TextColor="White"
+             FontSize="20"/>
+      
+    </Grid>
 
     <Grid Grid.Row="1" BackgroundColor="White">
       <Grid.RowDefinitions>
@@ -55,49 +64,115 @@
           </Grid.ColumnDefinitions>
 
           <!--Nome Fantasia-->
-          <Entry Grid.Row="0" Grid.ColumnSpan="2"
-                 Placeholder="Nome fantasia"
-                 VerticalOptions="End"
-                 Style="{StaticResource EntryStyle}" />
+          <StackLayout Grid.Row="0" 
+                       Grid.ColumnSpan="2"
+                       Spacing="0">
 
-          <!--Razão Social-->
-          <Entry Grid.Row="1" Grid.ColumnSpan="2"
-                 Placeholder="Razão social"
-                 VerticalOptions="End"
-                 Style="{StaticResource EntryStyle}" />
+            <Label Text="Nome fantasia"
+                   Style="{StaticResource LabelStyle}"
+                   TextColor="#BBBBC4"/>
 
-          <!--Tipo de Empresa-->
-          <StackLayout Grid.Row="2" Grid.ColumnSpan="2" Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="0">
-            <Label Text="Tipo de empresa" Style="{StaticResource LabelStyle}" />
-            <Picker x:Name="CompanyTypePicker" VerticalOptions="End" BackgroundColor="{StaticResource FieldsBackgroundColor}" />
+            <Entry VerticalOptions="End"
+                   Style="{StaticResource EntryStyle}" />
+            
           </StackLayout>
 
-          <!--CNPJ-->
-          <Entry Grid.Row="3" Grid.Column="0"
-                 Placeholder="CNPJ"
-                 HorizontalOptions="FillAndExpand"
-                 VerticalOptions="End"
-                 Keyboard="Numeric"
-                 Style="{StaticResource EntryStyle}" />
+
+          <!--Razão Social-->
+          <StackLayout Grid.Row="1"
+                       Grid.ColumnSpan="2"
+                       Spacing="0">
+
+            <Label Text="Razão Social"
+                   Style="{StaticResource LabelStyle}"
+                   TextColor="#BBBBC4"/>
+
+            <Entry VerticalOptions="End"
+                   Style="{StaticResource EntryStyle}" />
+
+          </StackLayout>
+
+          <!--Tipo de Empresa-->
+          <StackLayout Grid.Row="2" 
+                       Grid.ColumnSpan="2" 
+                       Orientation="Vertical" 
+                       VerticalOptions="FillAndExpand" 
+                       Spacing="0">
+            
+            <Label Text="Tipo de empresa"
+                   Style="{StaticResource LabelStyle}"
+                   TextColor="#BBBBC4"/>
+            
+            <Picker x:Name="CompanyTypePicker" 
+                    VerticalOptions="End" 
+                    BackgroundColor="{StaticResource FieldsBackgroundColor}" />
+          
+          </StackLayout>
+
+          <!--Razão Social-->
+          <StackLayout Grid.Row="3" 
+                       Grid.Column="0"
+                       Spacing="0">
+
+            <Label Text="CNPJ"
+                   Style="{StaticResource LabelStyle}"
+                   TextColor="#BBBBC4"/>
+
+            <Entry HorizontalOptions="FillAndExpand"
+                   VerticalOptions="End"
+                   Keyboard="Numeric"
+                   Style="{StaticResource EntryStyle}" />
+
+          </StackLayout>
 
           <!--Inscição Estadual-->
-          <Entry Grid.Row="3" Grid.Column="1"
-                 Placeholder="Insc. Estadual"
-                 HorizontalOptions="FillAndExpand"
-                 VerticalOptions="End"
-                 Keyboard="Numeric"
-                 Style="{StaticResource EntryStyle}" />
+          <StackLayout Grid.Row="3" 
+                       Grid.Column="1"
+                       Spacing="0">
+
+            <Label Text="Insc. Estadual"
+                   Style="{StaticResource LabelStyle}"
+                   TextColor="#BBBBC4"/>
+
+            <Entry HorizontalOptions="FillAndExpand"
+                   VerticalOptions="End"
+                   Keyboard="Numeric"
+                   Style="{StaticResource EntryStyle}" />
+
+          </StackLayout>          
 
           <!--Atividade Primária-->
-          <StackLayout Grid.Row="4" Grid.ColumnSpan="2" Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="0">
-            <Label Text="Atividade primária" Style="{StaticResource LabelStyle}" />
-            <Picker x:Name="FirstActivityTypePicker" VerticalOptions="End" BackgroundColor="{StaticResource FieldsBackgroundColor}" />
+          <StackLayout Grid.Row="4" 
+                       Grid.ColumnSpan="2" 
+                       Orientation="Vertical" 
+                       VerticalOptions="FillAndExpand" 
+                       Spacing="0">
+            
+            <Label Text="Atividade Primária"
+                   Style="{StaticResource LabelStyle}"
+                   TextColor="#BBBBC4"/>
+            
+            <Picker x:Name="FirstActivityTypePicker" 
+                    VerticalOptions="End" 
+                    BackgroundColor="{StaticResource FieldsBackgroundColor}" />
+          
           </StackLayout>
 
           <!--Atividade Secundária-->
-          <StackLayout Grid.Row="5" Grid.ColumnSpan="2" Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="0">
-            <Label Text="Atividade secundária" Style="{StaticResource LabelStyle}" />
-            <Picker x:Name="SecondActivityTypePicker" VerticalOptions="End" BackgroundColor="{StaticResource FieldsBackgroundColor}" />
+          <StackLayout Grid.Row="5" 
+                       Grid.ColumnSpan="2"
+                       Orientation="Vertical" 
+                       VerticalOptions="FillAndExpand" 
+                       Spacing="0">
+            
+            <Label Text="Atividade Secundária"
+                   Style="{StaticResource LabelStyle}"
+                   TextColor="#BBBBC4"/>
+            
+            <Picker x:Name="SecondActivityTypePicker" 
+                    VerticalOptions="End" 
+                    BackgroundColor="{StaticResource FieldsBackgroundColor}" />
+          
           </StackLayout>
 
           <!--Navegação-->
@@ -111,7 +186,8 @@
             <!--Próximo-->
             <Button Grid.Column="1"
                     Text="Próximo"
-                    Style="{StaticResource NavigationButtonStyle}"/>
+                    Style="{StaticResource NavigationButtonStyle}"
+                    Clicked="OnButtonClicked"/>
           </Grid>
 
         </Grid>

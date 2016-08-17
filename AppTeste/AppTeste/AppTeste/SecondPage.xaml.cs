@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 
 namespace AppTeste
 {
-    public partial class MainPage : ContentPage
+    public partial class SecondPage : ContentPage
     {
-        public MainPage()
+        public SecondPage()
         {
             InitializeComponent();
 
@@ -20,13 +21,11 @@ namespace AppTeste
                 SecondActivityTypePicker.Items.Add(string.Format("Atividade {0}", i));
             }
 
-            NavigationPage.SetHasNavigationBar(this, false);
-
         }
 
-        void OnButtonClicked(object sender, EventArgs e)
+        void Voltar_Clicked(object sender, EventArgs e)
         {
-            App.Current.MainPage = new SecondPage();
+            App.Current.MainPage = new MainPage();
         }
 
     }
